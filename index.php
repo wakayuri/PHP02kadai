@@ -12,7 +12,7 @@
 <header>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
-    <div class="navbar-header"><a class="navbar-brand" href="select.php">書籍データ登録</a></div>
+    <div class="navbar-header"><a class="navbar-brand" href="select_copy.php">書籍データ登録</a></div>
     </div>
   </nav>
 </header>
@@ -27,11 +27,6 @@
      <label>作者：<input type="text" name="author"></label><br>
      <label>URL：<input type="text" name="url"></label><br>
      <label>コメント：<br><textArea name="naiyou" rows="4" cols="40"></textArea></label><br>
-     <form action="upload.php" method="post" enctype="multipart/form-data">
-    アップロードする画像ファイルを選択する:
-    <input type="file" name="file">
-    <input type="submit" name="submit" value="Upload">
-</form>
      <input type="submit" value="送信">
     </fieldset>
   </div>
