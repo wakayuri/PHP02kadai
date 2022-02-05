@@ -12,7 +12,8 @@
 <header>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
-    <div class="navbar-header"><a class="navbar-brand" href="select_copy.php">書籍データ登録</a></div>
+    <div class="navbar-header"><a class="navbar-brand" href="select_copy.php">書籍データ一覧</a></div>
+    <div class="navbar-header"><a class="navbar-brand" href="logout.php">ログアウト</a></div>
     </div>
   </nav>
 </header>

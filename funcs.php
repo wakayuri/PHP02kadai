@@ -19,7 +19,7 @@ function db_conn(){
 
         $db_name = "";    //データベース名
         $db_id   = "";      //アカウント名
-        $db_pw   = "";      //パスワード：XAMPPはパスワード無しに修正してください。
+        $db_pw   = "";      //パスワード
         $db_host = ""; //DBホスト
         $pdo = new PDO('mysql:dbname=' . $db_name . ';charset=utf8;host=' . $db_host, $db_id, $db_pw);
         return $pdo;//ここを追記
@@ -48,3 +48,14 @@ function redirect($file_name){//引数に下でつけた変数名を入れる
 
     exit();
 }
+
+
+//ログインチェック
+function loginCheck(){
+    if( $_SESSION["chk_ssid"] != session_id() ){//セッションに保存してあるidと今のidがイコールではなければ（一致していなければ）
+      exit('LOGIN ERROR');//エラーとなる
+    }else{//揃っていれば（一致していたら）処理が走る
+      session_regenerate_id(true);//idを更新して
+      $_SESSION['chk_ssid'] = session_id();//保存し直す（ログイン中もページを跨ぐたびにハックされにくい状態にする）
+    }
+  }

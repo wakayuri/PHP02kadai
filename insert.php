@@ -8,7 +8,6 @@ $author= $_POST["author"];
 $url= $_POST["url"];
 $naiyou= $_POST["naiyou"];
 
-
 // 2. DB接続します エラーか成功かの分岐をする.PDO＝PHPとデータベースを接続する機能
 // try {
 //   //Password:MAMP='root',XAMPP=''

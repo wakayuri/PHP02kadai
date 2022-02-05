@@ -1,14 +1,18 @@
 <?php
-//1.  DB接続します
-// try {
-//   //Password:MAMP='root',XAMPP=''
-//   $pdo = new PDO('mysql:dbname=gs_book_db;charset=utf8;host=localhost','root','root');
-  
-// } catch (PDOException $e) {
-//   exit('DBConnectError:'.$e->getMessage());
-// }
+//SESSIONスタート
+session_start();
 
+//1.  DB接続します
 require_once('funcs.php'); 
+
+//ログインチェック
+loginCheck();//funcs.phpの関数を呼び出すだけでOK
+
+//以下ログインユーザーのみしか見れないようにする
+$user_name= $_SESSION['name'];
+$kanri_flg= $_SESSION['kanri_flg'];//0が一般で、1が管理者
+
+
 $pdo = db_conn();
 
 //２．SQL文を用意(データ取得：SELECT)データベースにある情報をすべて取ってくる
